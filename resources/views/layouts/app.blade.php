@@ -14,8 +14,12 @@
 <div class="container pt-5">
     @auth
         <header class="pb-3 border-bottom d-flex justify-content-around">
-            <a href="{{ route('main') }}">Все контакты</a>
-            <a href="{{ route('favorites') }}">Избранное</a>
+            <a href="{{ route('main') }}" class="mt-2">Все контакты</a>
+            <a href="{{ route('favorites') }}" class="mt-2">Избранное</a>
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-danger">выйти</button>
+            </form>
         </header>
     @endauth
     @yield('body')
